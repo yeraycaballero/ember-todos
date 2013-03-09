@@ -17,11 +17,13 @@
     </div>
 
     <div id="stats">
-      <button {{ action "clearCompletedTodos"}}>Clear Completed Todos</button>
+      <button {{bindAttr disabled='noOneDone'}} {{ action "clearCompletedTodos" }}>Clear Completed Todos</button>
       {{remaining}} remaining
     </div>
-
-    {{ view Ember.Checkbox title='Mark All Done' }}
+    
+    <div>
+      {{ view Ember.Checkbox class="mark-all-done" titleBinding='markLabel' disabledBinding="isEmpty" checkedBinding="markAll"}} Mark all Done
+    </div>
 
     <ul>
       {{#each controller}}
