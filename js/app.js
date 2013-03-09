@@ -49,14 +49,7 @@ App.ApplicationController = Ember.ArrayController.extend({
 
   isEmpty: function() {
     return this.get('length') === 0;
-  }.property('length'),
-
-  markLabel : function() {    
-    console.log('markAll: ' + this.get('markAll') );
-
-    if (this.get('markAll') == true) return 'UnMark All'
-    return 'Mark All Done';
-  }.property('@each.isDone')
+  }.property('length')
 
 });
 
